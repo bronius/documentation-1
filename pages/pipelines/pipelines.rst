@@ -31,7 +31,7 @@ Internally pipelines are represented as code. Let's have a look at a simple exam
 
 This code snippet declares a new pipeline named ``My new pipeline``, which has two stages.
 
-Stages are ran in the order of their given *priority*, and aren't otherwise named. Stage priorities can be any integer, positive or negative, you prefer.
+Stages are run in the order of their given *priority*, and aren't otherwise named. Stage priorities can be any integer, positive or negative, you prefer.
 In our example the first stage has a priority of 1 and the second stage a priority of 2, however -99 and 42 could be used instead.
 Ordering based upon stage priority gives you the ability to run certain rules before or after others, which might exist in other connected pipelines, without modifying those other connected pipelines.
 This is particularly handy when dealing with changing data formats.
@@ -47,7 +47,7 @@ any actions to run. For a message without both fields the rule's condition would
 as the stage requires *all* rules be satisfied (``match all``). With the pipeline aborted, stage 2 would not run. 
 
 ``match either`` acts as an ``OR`` operator, only requiring a single rule's condition evaluate to ``true`` in order to continue pipeline processing.
-Note that actions are still ran for all matching rules in the stage, even if it is the final stage in the pipeline.
+Note that actions are still run for all matching rules in the stage, even if it is the final stage in the pipeline.
 
 Rules are referenced by their names, and can therefore be shared among many different pipelines. The intention is to enable creation of reusable building blocks,
 making it easier to process the data specific to your organization or use case.
